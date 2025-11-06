@@ -59,17 +59,15 @@ Student body president, focus on Mathematics, Physics, Philosophy, History
 
 <p> <em><strong>EXPERIENCE</strong></em>
 <ul>
-  <li> <em><strong> Private Math & Physics teacher  </strong></em>  2018-present</li>
-Personalized tutoring in algebra, calculus and geometry for university and high school students.
-
-  
-  <li> <em><strong>Teacher Assistant </strong></em> 2018-2021 </li>
-Assisted students with learning disabilities by creating personalized teaching strategies.
-
-
   <li> <em><strong> Quantitative Trader </strong></em> 2025-Present</li>
 Internship at UniCredit on the Government Bonds trading desk, where I support daily trading
 activities by developing and implementing quantitative tools and infrastructure.
+  
+  <li> <em><strong> Private Math & Physics teacher  </strong></em>  2018-present</li>
+Personalized tutoring in algebra, calculus and geometry for university and high school students.
+  
+  <li> <em><strong>Teacher Assistant </strong></em> 2018-2021 </li>
+Assisted students with learning disabilities by creating personalized teaching strategies.
 </ul>
 
 
@@ -78,5 +76,5 @@ activities by developing and implementing quantitative tools and infrastructure.
   <li> Languages: Italian, English</li>
   <li> Skills & tools: Matlab, C++, Python, Excel, Latex, PowerPoint, R</li>
   <li> Soft skills: communication, leadership, teamwork</li>
-  <li> Interests: Sailing, Gym enthusiast, Trekking, Travelling, and Sightseeing</li>
+  <li> Interests: Sailing, Gym enthusiast, Trekking, Travelling</li>
 </ul>
