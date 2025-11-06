@@ -4,7 +4,7 @@
 
   
 <p> <em><strong>PROJECTS</strong></em>
-<ol>
+<ul>
   <li> <em><strong>Multivariate Pricing</strong></em> - 2024 </li>
 Developed and calibrated multivariate Levy models (NIG) for the S&P 500 and EURO STOXX 50;  
 priced exotic derivatives and compared model performance against VG and Black models. [Matlab, Python]
@@ -24,12 +24,23 @@ with both a stochastic and deterministic approach. [Matlab, Excel]
   <li> <em><strong>Clustering of Bank Customers</strong></em> - 2025</li>
 Segmented bank customers using clustering to identify key personas and optimize banking strategies. [Python]
 
-</ol>
+ <li> <em><strong>Replication of indices with a basket of Futures</strong></em> - 2025 </li>
+visit https://gm46.pythonanywhere.com/ for more info
+
+ <li> <em><strong> Cheapness Engine for Governative Bonds </strong></em> - 2025 </li>
+ extract from a group of bonds common and idysincratic movements and deduce a cheapness score using PCA methods
+
+ <li> <em><strong> PCA decomposition of curves </strong></em> - 2025 </li>
+decompose curves into principal components and anlyze movements common between bonds and idysincratic
+
+ <li> <em><strong> Strategy backtesting </strong></em> - 2025 </li>
+ <li> <em><strong> Hedge weights with Regression  </strong></em> - 2025 </li>
+</ul>
 
 
 
 <p> <em><strong>EDUCATION</strong></em>
-<ol>
+<ul>
   <li> <em><strong> MSc Mathematical Engineering, Quantitative Finance [exp. 110/110] 2023-Present
   </strong></em> </li>
 key courses: Financial Engineering, Mathematical Finance, Stochastic Calculus, Computational Finance,
@@ -39,16 +50,15 @@ Algorithms and Parallel Computing, Fintech, Real and Functional Analysis, Insura
  </strong></em> </li>
 Mathematical Finance, Partial Differential Equations, Statistics, Numerical Analysis, Probability, Analysis I-III
 
-
   <li> <em><strong> Liceo Scientifico Statale R.Donatelli - B.Pascal 2015-2020
  </strong></em> </li>
 Student body president, focus on Mathematics, Physics, Philosophy, History
 
-</ol>
+</ul>
 
 
 <p> <em><strong>EXPERIENCE</strong></em>
-<ol>
+<ul>
   <li> <em><strong> Private Math & Physics teacher  </strong></em>  2018-present</li>
 Personalized tutoring in algebra, calculus and geometry for university and high school students.
 
@@ -60,13 +70,13 @@ Assisted students with learning disabilities by creating personalized teaching s
   <li> <em><strong> Quantitative Trader </strong></em> 2025-Present</li>
 Internship at UniCredit on the Government Bonds trading desk, where I support daily trading
 activities by developing and implementing quantitative tools and infrastructure.
-</ol>
+</ul>
 
 
 <p>SKILLS & INTERESTS: 
-<ol>
+<ul>
   <li> Languages: Italian, English</li>
   <li> Skills & tools: Matlab, C++, Python, Excel, Latex, PowerPoint, R</li>
   <li> Soft skills: communication, leadership, teamwork</li>
   <li> Interests: Sailing, Gym enthusiast, Trekking, Travelling, and Sightseeing</li>
-</ol>
+</ul>
