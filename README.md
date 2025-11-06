@@ -1,9 +1,6 @@
 # Andrea Tarditi
 
-**Contatti:** +39 3426848XXX - Email andreatrdt@gmail.com - 
-
-
----
+**Contacts:** +39 3426848XXX - Email andreatrdt@gmail.com - 
 
   
 <p> <em><strong>PROJECTS</strong></em>
@@ -29,8 +26,6 @@ Segmented bank customers using clustering to identify key personas and optimize 
 
 </ol>
 
----
-
 
 
 <p> <em><strong>EDUCATION</strong></em>
@@ -51,7 +46,6 @@ Student body president, focus on Mathematics, Physics, Philosophy, History
 
 </ol>
 
----
 
 <p> <em><strong>EXPERIENCE</strong></em>
 <ol>
@@ -67,8 +61,6 @@ Assisted students with learning disabilities by creating personalized teaching s
 Internship at UniCredit on the Government Bonds trading desk, where I support daily trading
 activities by developing and implementing quantitative tools and infrastructure.
 </ol>
-
----
 
 
 <p>SKILLS & INTERESTS: 
