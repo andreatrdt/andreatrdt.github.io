@@ -1,8 +1,45 @@
 # Andrea Tarditi
 
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
 **Contacts:** +39 3426848XXX - Email andreatrdt@gmail.com - 
 
-  
+
 <p> <em><strong>PROJECTS</strong></em>
 <ul>
   <li> <em><strong>Multivariate Pricing</strong></em> - 2024 </li>
@@ -25,7 +62,7 @@ with both a stochastic and deterministic approach. [Matlab, Excel]
 Segmented bank customers using clustering to identify key personas and optimize banking strategies. [Python]
 
  <li> <em><strong>Replication of indices with a basket of Futures</strong></em> - 2025 </li>
-visit https://gm46.pythonanywhere.com/ for more info
+visit <a href="https://gm46.pythonanywhere.com">project</a> for more info
 
  <li> <em><strong> Cheapness Engine for Governative Bonds </strong></em> - 2025 </li>
  extract from a group of bonds common and idysincratic movements and deduce a cheapness score using PCA methods
