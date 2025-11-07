@@ -2,6 +2,86 @@
 
 **Contacts:** +39 3426848XXX - Email andreatrdt@gmail.com - 
 
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fancy Rectangle Link Button</title>
+  <style>
+    :root{
+      --btn-bg: linear-gradient(180deg, #5b8cff, #3a6df0);
+      --btn-bg-hover: linear-gradient(180deg, #6b97ff, #3f73ff);
+      --btn-border: #2747b2;
+      --btn-text: #fff;
+      --ring: 0 0 0 4px rgba(80,120,255,.35);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;min-height:100svh;display:grid;place-content:center;
+      background:#0f1222;color:#d7dcff;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans",sans-serif
+    }
+    a.btn{
+      /* core layout */
+      position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+      text-decoration:none;min-width:11rem;padding:.9rem 1.15rem;border-radius:14px; /* nice rectangle */
+      /* type */
+      font-weight:700;letter-spacing:.2px;font-size:1rem;color:var(--btn-text);
+      /* visuals */
+      background:var(--btn-bg);border:1px solid var(--btn-border);
+      box-shadow:0 10px 20px rgba(50,83,200,.35),0 2px 6px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.25);
+      transform:translateY(0);
+      transition:transform .15s ease, box-shadow .2s ease, background .2s ease, filter .2s ease;
+      will-change: transform;
+    }
+    a.btn::after{
+      /* subtle glossy top highlight */
+      content:"";position:absolute;inset:1px 1px auto 1px;height:50%;
+      border-radius:13px 13px 8px 8px;
+      background:linear-gradient(180deg,rgba(255,255,255,.27),rgba(255,255,255,0));
+      pointer-events:none
+    }
+    a.btn:hover{
+      background:var(--btn-bg-hover);transform:translateY(-1px);
+      box-shadow:0 6px 14px rgba(50,83,200,.4),0 1px 4px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.2);
+      filter:saturate(1.05)
+    }
+    a.btn:active{transform:translateY(0);filter:brightness(.98)}
+    a.btn:focus-visible{outline:none;box-shadow:0 6px 14px rgba(50,83,200,.4),0 1px 4px rgba(0,0,0,.25), var(--ring)}
+    a.btn .arrow{font-size:1.1em;line-height:1;translate:0 0;transition:translate .2s ease}
+    a.btn:hover .arrow{translate:.15rem 0}@media (prefers-reduced-motion: reduce){a.btn, a.btn .arrow{transition:none}}
+
+.demo{display:grid;gap:1rem;justify-items:center}
+.small{font-size:.95rem;padding:.7rem 1rem;min-width:9.5rem}
+.large{font-size:1.1rem;padding:1rem 1.4rem;min-width:12.5rem}
+.secondary{
+  --btn-bg: linear-gradient(180deg, #2b3248, #1a2035);
+  --btn-bg-hover: linear-gradient(180deg, #323a56, #1f2540);
+  --btn-border: #46508a;
+  --btn-text: #e8ecff;
+}
+
+  </style>
+</head>
+<body>
+  <main class="demo">
+    <!-- Primary fancy rectangle link button -->
+    <a class="btn" href="https://gm46.pythonanywhere.com" aria-label="Go to example website">
+      Fancy Button <span class="arrow">↗</span>
+    </a><!-- Variant examples: size + subtle dark style -->
+<a class="btn small secondary" href="#">
+  Secondary
+</a>
+<a class="btn large" href="#">
+  Large Button <span class="arrow">→</span>
+</a>
+
+  </main>
+</body>
+</html>
+
 
 <p> <em><strong>PROJECTS</strong></em>
 <ul>
