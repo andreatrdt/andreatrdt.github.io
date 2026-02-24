@@ -1,81 +1,607 @@
-# Andrea Tarditi
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Andrea Tarditi — Quantitative Finance / Financial Engineering projects, experience, and education." />
+  <title>Andrea Tarditi | Quantitative Finance</title>
 
-**Contacts:** +39 3426848XXX - Email andreatrdt@gmail.com - 
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.09);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --faint: rgba(255,255,255,.55);
+      --line: rgba(255,255,255,.12);
+      --accent: #7aa2ff;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --max: 1050px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
 
+    /* Light mode if user chooses it */
+    [data-theme="light"]{
+      --bg: #f7f8fb;
+      --panel: rgba(10,20,35,.06);
+      --panel2: rgba(10,20,35,.10);
+      --text: rgba(10,20,35,.92);
+      --muted: rgba(10,20,35,.70);
+      --faint: rgba(10,20,35,.55);
+      --line: rgba(10,20,35,.14);
+      --accent: #365cff;
+      --shadow: 0 10px 30px rgba(10,20,35,.12);
+    }
 
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: var(--sans);
+      background: radial-gradient(1200px 800px at 70% -10%, rgba(122,162,255,.20), transparent 60%),
+                  radial-gradient(900px 600px at 10% 0%, rgba(120,255,206,.12), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    a{ color: var(--text); text-decoration: none; }
+    a:hover{ color: var(--accent); }
 
-<p> <em><strong>PROJECTS</strong></em>
-<ul>
-  <li> <em><strong>Multivariate Pricing</strong></em> - 2024 </li>
-Developed and calibrated multivariate Levy models (NIG) for the S&P 500 and EURO STOXX 50;  
-priced exotic derivatives and compared model performance against VG and Black models. [Matlab, Python]
-  
-  <li> <em><strong>Portfolio Management</strong></em> - 2024</li>
-Implemented and analyzed portfolio optimization strategies, including sector constraints, Black-Litterman
-model, and resampling techniques on S&P 500 indices; validated with out-of-sample performance. [Matlab]
+    .container{ width:min(var(--max), calc(100% - 44px)); margin:0 auto; }
 
-  <li> <em><strong>Energy Price</strong></em> - 2024</li>
-Modeled electricity futures using OU-IG and OU-Normal stochastic processes, capturing seasonality, jumps,
-and mean reversion; calibrated models to market data and simulated option prices via Montecarlo. [Matlab]
+    /* Top bar */
+    .topbar{
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      background: color-mix(in srgb, var(--bg) 76%, transparent);
+      border-bottom: 1px solid var(--line);
+      z-index: 10;
+    }
+    .topbar .row{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0;
+      gap: 14px;
+    }
+    .brand{
+      display:flex; flex-direction:column;
+      gap: 2px;
+      min-width: 220px;
+    }
+    .brand strong{ font-size: 15px; letter-spacing:.2px; }
+    .brand span{ font-size: 12.5px; color: var(--muted); }
 
-  <li> <em><strong>Insurance Company Capital Requirement</strong></em> - 2024</li>
-Computed the Basic Solvency Capital Requirement for an insurance company based on Life and Market risks
-with both a stochastic and deterministic approach. [Matlab, Excel]
-    
-  <li> <em><strong>Clustering of Bank Customers</strong></em> - 2025</li>
-Segmented bank customers using clustering to identify key personas and optimize banking strategies. [Python]
+    nav{
+      display:flex; flex-wrap:wrap;
+      justify-content:flex-end;
+      gap: 10px;
+      align-items:center;
+    }
+    .navlink{
+      font-size: 13px;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 10px;
+    }
+    .navlink:hover{ background: var(--panel); color: var(--text); }
+    .btn{
+      font-size: 13px;
+      padding: 9px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    .btn:hover{ border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); }
+    .btn.primary{
+      background: color-mix(in srgb, var(--accent) 22%, var(--panel));
+      border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
+    }
+    .iconbtn{
+      font-family: var(--mono);
+      font-size: 12px;
+      padding: 9px 10px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      cursor: pointer;
+      color: var(--muted);
+    }
+    .iconbtn:hover{ color: var(--text); }
 
- <li> <em><strong>Replication of indices with a basket of Futures</strong></em> - 2025 </li>
-visit <a href="https://gm46.pythonanywhere.com">project</a> for more info
+    /* Hero */
+    .hero{ padding: 34px 0 18px; }
+    .hero h1{
+      margin: 0 0 10px;
+      font-size: clamp(30px, 4vw, 46px);
+      letter-spacing: -.6px;
+    }
+    .hero p{
+      margin: 0;
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 76ch;
+    }
+    .quick{
+      margin-top: 18px;
+      display:flex; flex-wrap:wrap; gap: 10px;
+      align-items:center;
+    }
+    .pill{
+      display:inline-flex;
+      gap: 8px;
+      align-items:center;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .pill code{ font-family: var(--mono); font-size: 12px; color: var(--text); }
 
- <li> <em><strong> Cheapness Engine for Governative Bonds </strong></em> - 2025 </li>
- extract from a group of bonds common and idysincratic movements and deduce a cheapness score using PCA methods
+    /* Sections */
+    section{ padding: 18px 0; }
+    .section-title{
+      display:flex; align-items:baseline; justify-content:space-between;
+      gap: 12px;
+      margin: 12px 0 10px;
+    }
+    .section-title h2{ margin:0; font-size: 18px; letter-spacing:.2px; }
+    .section-title span{ color: var(--faint); font-size: 13px; }
 
- <li> <em><strong> PCA decomposition of curves </strong></em> - 2025 </li>
-decompose curves into principal components and anlyze movements common between bonds and idysincratic
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .card{
+      grid-column: span 6;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 14px 14px 12px;
+      box-shadow: var(--shadow);
+    }
+    .card:hover{ background: var(--panel2); }
+    .card h3{
+      margin:0 0 6px;
+      font-size: 15px;
+      letter-spacing:.2px;
+    }
+    .meta{
+      display:flex; flex-wrap:wrap; gap: 8px;
+      align-items:center;
+      color: var(--faint);
+      font-size: 12.5px;
+      margin-bottom: 8px;
+    }
+    .tag{
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: color-mix(in srgb, var(--panel) 70%, transparent);
+      color: var(--muted);
+    }
+    .card p{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 13.5px;
+    }
+    .card .links{
+      display:flex; flex-wrap:wrap; gap: 10px;
+      font-size: 13px;
+    }
+    .card .links a{
+      color: var(--muted);
+      padding: 6px 8px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+    }
+    .card .links a:hover{
+      color: var(--text);
+      border-color: var(--line);
+      background: color-mix(in srgb, var(--panel) 70%, transparent);
+    }
 
- <li> <em><strong> Strategy backtesting </strong></em> - 2025 </li>
- <li> <em><strong> Hedge weights with Regression  </strong></em> - 2025 </li>
-</ul>
+    /* Timeline */
+    .timeline{ display:flex; flex-direction:column; gap: 12px; }
+    .item{
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+    .item .top{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap: 10px;
+      align-items:baseline;
+      margin-bottom: 6px;
+    }
+    .item strong{ font-size: 14.5px; }
+    .item .when{ color: var(--faint); font-size: 12.5px; font-family: var(--mono); }
+    .item .where{ color: var(--muted); font-size: 13px; margin-bottom: 6px; }
+    .item ul{ margin: 0; padding-left: 18px; color: var(--muted); font-size: 13.5px; }
+    .item li{ margin: 6px 0; }
 
+    /* Two-column blocks */
+    .cols{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .box{
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+    .box h3{ margin:0 0 8px; font-size: 14.5px; }
+    .box ul{ margin: 0; padding-left: 18px; color: var(--muted); font-size: 13.5px; }
+    .box li{ margin: 6px 0; }
 
+    footer{
+      padding: 26px 0 40px;
+      color: var(--faint);
+      font-size: 12.5px;
+      border-top: 1px solid var(--line);
+      margin-top: 22px;
+    }
 
-<p> <em><strong>EDUCATION</strong></em>
-<ul>
-  <li> <em><strong> MSc Mathematical Engineering, Quantitative Finance [exp. 110/110] 2023-Present
-  </strong></em> </li>
-key courses: Financial Engineering, Mathematical Finance, Stochastic Calculus, Computational Finance,
-Algorithms and Parallel Computing, Fintech, Real and Functional Analysis, Insurance, Econometrics.
-  
-  <li> <em><strong>BSc Mathematical Engineering [94/110] 2020-2023
- </strong></em> </li>
-Mathematical Finance, Partial Differential Equations, Statistics, Numerical Analysis, Probability, Analysis I-III
+    @media (max-width: 900px){
+      .card{ grid-column: span 12; }
+      .brand{ min-width: auto; }
+      .cols{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
 
-  <li> <em><strong> Liceo Scientifico Statale R.Donatelli - B.Pascal 2015-2020
- </strong></em> </li>
-Student body president, focus on Mathematics, Physics, Philosophy, History
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div class="row">
+        <div class="brand">
+          <strong>Andrea Tarditi</strong>
+          <span>Quantitative Finance · Financial Engineering · Market Microstructure</span>
+        </div>
 
-</ul>
+        <nav aria-label="Primary">
+          <a class="navlink" href="#projects">Projects</a>
+          <a class="navlink" href="#experience">Experience</a>
+          <a class="navlink" href="#education">Education</a>
+          <a class="navlink" href="#skills">Skills</a>
+          <a class="navlink" href="#awards">Awards</a>
+          <a class="btn primary" href="CV_Andrea_Tarditi.pdf">Download CV</a>
+          <button class="iconbtn" id="themeBtn" type="button" aria-label="Toggle theme">theme</button>
+        </nav>
+      </div>
+    </div>
+  </div>
 
+  <main class="container">
+    <header class="hero" id="top">
+      <h1>Andrea Tarditi</h1>
+      <p>
+        MSc Mathematical Engineering (Quantitative Finance) at Politecnico di Milano.
+        Interested in derivatives pricing, fixed income analytics, risk, and market microstructure
+        (Hawkes processes + stochastic control for market making).
+      </p>
 
-<p> <em><strong>EXPERIENCE</strong></em>
-<ul>
-  <li> <em><strong> Quantitative Trader </strong></em> 2025-Present</li>
-Internship at UniCredit on the Government Bonds trading desk, where I support daily trading
-activities by developing and implementing quantitative tools and infrastructure.
-  
-  <li> <em><strong> Private Math & Physics teacher  </strong></em>  2018-present</li>
-Personalized tutoring in algebra, calculus and geometry for university and high school students.
-  
-  <li> <em><strong>Teacher Assistant </strong></em> 2018-2021 </li>
-Assisted students with learning disabilities by creating personalized teaching strategies.
-</ul>
+      <div class="quick" role="list">
+        <!-- Decide what you want public. Phone numbers on public pages are spam magnets. -->
+        <a class="pill" href="mailto:andreatrdt@gmail.com" role="listitem">Email: <code>andreatrdt@gmail.com</code></a>
+        <span class="pill" role="listitem">Location: <code>Milan, IT</code></span>
+        <a class="pill" href="https://github.com/andreatrdt" target="_blank" rel="noreferrer" role="listitem">GitHub</a>
+        <!-- Replace with your real LinkedIn URL -->
+        <a class="pill" href="#" role="listitem">LinkedIn</a>
+      </div>
+    </header>
 
+    <section id="projects">
+      <div class="section-title">
+        <h2>Projects</h2>
+        <span>Selected academic + applied work</span>
+      </div>
 
-<p>SKILLS & INTERESTS: 
-<ul>
-  <li> Languages: Italian, English</li>
-  <li> Skills & tools: Matlab, C++, Python, Excel, Latex, PowerPoint, R</li>
-  <li> Soft skills: communication, leadership, teamwork</li>
-  <li> Interests: Sailing, Gym enthusiast, Trekking, Travelling</li>
-</ul>
+      <div class="grid">
+        <article class="card">
+          <h3>Hawkes Market Making (HJB Optimal Control)</h3>
+          <div class="meta">
+            <span class="when">2026</span>
+            <span class="tag">Python</span>
+            <span class="tag">Stochastic Control</span>
+            <span class="tag">Market Microstructure</span>
+          </div>
+          <p>
+            Built and calibrated a bivariate Hawkes model of aggressive buy/sell order flow in limit order books.
+            Formulated and solved an HJB market-making control problem under CARA utility, modeling fills and adverse
+            selection via predictable thinning/marking, and validated policies in historical replay/backtests.
+          </p>
+          <div class="links">
+            <a href="https://github.com/andreatrdt" target="_blank" rel="noreferrer">Code on GitHub →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Yield Curve Decomposition (PCA)</h3>
+          <div class="meta">
+            <span class="when">2025</span>
+            <span class="tag">Python</span>
+            <span class="tag">Fixed Income</span>
+            <span class="tag">PCA</span>
+          </div>
+          <p>
+            Decomposed yield-curve dynamics into level (parallel shift), slope (twist), and curvature (butterfly) factors.
+            Split Euro-wide components from country-specific movements; used factor structure for relative-value signals.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Cheapness Engine for Government Bonds</h3>
+          <div class="meta">
+            <span class="when">2025</span>
+            <span class="tag">Python</span>
+            <span class="tag">PCA</span>
+            <span class="tag">Rates</span>
+          </div>
+          <p>
+            Extracted common and idiosyncratic bond movements and derived a relative cheapness score using PCA-style
+            factor decomposition and residual analysis.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Index Replication with a Basket of Futures</h3>
+          <div class="meta">
+            <span class="when">2025</span>
+            <span class="tag">Python</span>
+            <span class="tag">Optimization</span>
+            <span class="tag">Replication</span>
+          </div>
+          <p>
+            Built a replication approach for equity indices using a constrained basket of futures; evaluated tracking error
+            and robustness across regimes.
+          </p>
+          <div class="links">
+            <a href="https://gm46.pythonanywhere.com" target="_blank" rel="noreferrer">Live project demo →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Portfolio Recommendation Platform (FinTech)</h3>
+          <div class="meta">
+            <span class="when">2025</span>
+            <span class="tag">Python</span>
+            <span class="tag">ML</span>
+            <span class="tag">Web App</span>
+          </div>
+          <p>
+            Deployed a simulated fintech investment platform that classifies investors and recommends tailored passive/active
+            ETF portfolios. Included an interactive questionnaire (e.g., Accumulation vs Income) and surfaced risk/TER details,
+            with stress/anomaly flags for market conditions.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Multivariate Pricing (Lévy Models)</h3>
+          <div class="meta">
+            <span class="when">2024</span>
+            <span class="tag">Matlab</span>
+            <span class="tag">Python</span>
+            <span class="tag">NIG</span>
+          </div>
+          <p>
+            Developed and calibrated multivariate Lévy models (NIG) for S&amp;P 500 and EURO STOXX 50; priced exotic derivatives
+            and compared performance against VG and Black models.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Energy Price Modeling</h3>
+          <div class="meta">
+            <span class="when">2024</span>
+            <span class="tag">Matlab</span>
+            <span class="tag">Stochastic Processes</span>
+            <span class="tag">Monte Carlo</span>
+          </div>
+          <p>
+            Modeled electricity futures with OU-IG and OU-Normal dynamics including seasonality, jumps, and mean reversion;
+            calibrated to market data and simulated option prices via Monte Carlo.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Insurance Capital Requirement (Solvency)</h3>
+          <div class="meta">
+            <span class="when">2024</span>
+            <span class="tag">Matlab</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Risk</span>
+          </div>
+          <p>
+            Computed Basic Solvency Capital Requirement for an insurance company focusing on Life and Market risks,
+            using both stochastic and deterministic approaches.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Clustering of Bank Customers</h3>
+          <div class="meta">
+            <span class="when">2025</span>
+            <span class="tag">Python</span>
+            <span class="tag">Clustering</span>
+            <span class="tag">Customer Analytics</span>
+          </div>
+          <p>
+            Segmented bank customers using clustering to identify key personas and support data-driven strategy design.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Strategy Backtesting (LOB Replay)</h3>
+          <div class="meta">
+            <span class="when">2025</span>
+            <span class="tag">Python</span>
+            <span class="tag">Backtesting</span>
+            <span class="tag">Microstructure</span>
+          </div>
+          <p>
+            Used historical LOB simulation/replay to derive quoting policies: calibrated target spread-from-mid or queue position
+            (volume ahead) per level; translated replay results into deployable rules linking aggressiveness to fills, adverse
+            selection, and inventory risk.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-title">
+        <h2>Experience</h2>
+        <span>Industry + teaching</span>
+      </div>
+
+      <div class="timeline">
+        <div class="item">
+          <div class="top">
+            <strong>Quantitative Trader Intern — UniCredit (Government Bonds Desk)</strong>
+            <span class="when">2025–Present</span>
+          </div>
+          <div class="where">Developing quantitative tools and infrastructure supporting daily trading activities.</div>
+          <ul>
+            <li>Fixed income analytics and signal extraction (relative value / PCA factors).</li>
+            <li>Tooling for monitoring, automation, and workflow support.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="top">
+            <strong>Private Math &amp; Physics Tutor</strong>
+            <span class="when">2018–Present</span>
+          </div>
+          <div class="where">Personalized tutoring (algebra, calculus, geometry) for high school and university students.</div>
+        </div>
+
+        <div class="item">
+          <div class="top">
+            <strong>Teacher Assistant (Learning Disabilities Support)</strong>
+            <span class="when">2018–2021</span>
+          </div>
+          <div class="where">Designed personalized teaching strategies to support students with learning disabilities.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="section-title">
+        <h2>Education</h2>
+        <span>Politecnico di Milano</span>
+      </div>
+
+      <div class="timeline">
+        <div class="item">
+          <div class="top">
+            <strong>MSc Mathematical Engineering — Quantitative Finance</strong>
+            <span class="when">2023–Present · expected 110/110</span>
+          </div>
+          <div class="where">Key courses: Financial Engineering, Mathematical Finance, Stochastic Calculus, Computational Finance, Algorithms &amp; Parallel Computing, FinTech, Real &amp; Functional Analysis, Insurance, Econometrics.</div>
+        </div>
+
+        <div class="item">
+          <div class="top">
+            <strong>BSc Mathematical Engineering</strong>
+            <span class="when">2020–2023 · 94/110</span>
+          </div>
+          <div class="where">Key courses: Mathematical Finance, PDEs, Statistics, Numerical Analysis, Probability, Analysis I–III.</div>
+        </div>
+
+        <div class="item">
+          <div class="top">
+            <strong>Liceo Scientifico Statale R. Donatelli – B. Pascal</strong>
+            <span class="when">2015–2020</span>
+          </div>
+          <div class="where">Student body president; focus on Mathematics, Physics, Philosophy, History.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-title">
+        <h2>Skills &amp; Interests</h2>
+        <span>Tools, languages, and extra-human hobbies</span>
+      </div>
+
+      <div class="cols">
+        <div class="box">
+          <h3>Technical</h3>
+          <ul>
+            <li>Python, Matlab, C++, R</li>
+            <li>Excel, LaTeX, PowerPoint</li>
+            <li>Bloomberg Terminal</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3>Languages &amp; Soft Skills</h3>
+          <ul>
+            <li>Languages: Italian, English</li>
+            <li>Communication, leadership, teamwork</li>
+            <li>Interests: sailing, gym, trekking, travelling</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards">
+      <div class="section-title">
+        <h2>Awards</h2>
+        <span>Things that signal competence in public</span>
+      </div>
+
+      <div class="timeline">
+        <div class="item">
+          <div class="top">
+            <strong>Best Pitch Award — QFinLab (Financial Engineering)</strong>
+            <span class="when">2024</span>
+          </div>
+          <div class="where">Winning pitch on multivariate Lévy models for exotic option pricing.</div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;">
+        <div>
+          <strong style="color:var(--text);">Contact</strong><br/>
+          <span>Email:</span> <a href="mailto:andreatrdt@gmail.com">andreatrdt@gmail.com</a>
+          <!-- Optional: add phone, but consider spam risk on public sites -->
+        </div>
+        <div style="text-align:right;">
+          <span style="font-family:var(--mono);">© <span id="year"></span> Andrea Tarditi</span><br/>
+          <span>Built for GitHub Pages · Single-file deploy</span>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Theme toggle (persisted)
+    const key = "theme_pref";
+    const btn = document.getElementById("themeBtn");
+    const saved = localStorage.getItem(key);
+    if (saved) document.documentElement.setAttribute("data-theme", saved);
+
+    btn.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+      const next = current === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem(key, next);
+    });
+  </script>
+</body>
+</html>
