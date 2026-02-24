@@ -1,80 +1,118 @@
-# Andrea Tarditi
+# Andrea Tarditi — Portfolio (GitHub Pages)
 
-**Contacts:** +39 3426848XXX - Email andreatrdt@gmail.com - 
+This repository hosts my personal website (GitHub Pages) containing a concise version of my CV:
+projects, experience, education, and skills.
 
+**Live site:** https://andreatrdt.github.io/  
+**Download CV:** https://andreatrdt.github.io/CV_Andrea_Tarditi.pdf
 
-<p> <em><strong>PROJECTS</strong></em>
-<ul>
-  <li> <em><strong>Multivariate Pricing</strong></em> - 2024 </li>
-Developed and calibrated multivariate Levy models (NIG) for the S&P 500 and EURO STOXX 50;  
-priced exotic derivatives and compared model performance against VG and Black models. [Matlab, Python]
-  
-  <li> <em><strong>Portfolio Management</strong></em> - 2024</li>
-Implemented and analyzed portfolio optimization strategies, including sector constraints, Black-Litterman
-model, and resampling techniques on S&P 500 indices; validated with out-of-sample performance. [Matlab]
+---
 
-  <li> <em><strong>Energy Price</strong></em> - 2024</li>
-Modeled electricity futures using OU-IG and OU-Normal stochastic processes, capturing seasonality, jumps,
-and mean reversion; calibrated models to market data and simulated option prices via Montecarlo. [Matlab]
+## Contents
 
-  <li> <em><strong>Insurance Company Capital Requirement</strong></em> - 2024</li>
-Computed the Basic Solvency Capital Requirement for an insurance company based on Life and Market risks
-with both a stochastic and deterministic approach. [Matlab, Excel]
-    
-  <li> <em><strong>Clustering of Bank Customers</strong></em> - 2025</li>
-Segmented bank customers using clustering to identify key personas and optimize banking strategies. [Python]
+- `index.html` — main one-page website (CV-style layout)
+- `CV_Andrea_Tarditi.pdf` — downloadable CV
+- `README.md` — this file
+- Optional:
+  - `.nojekyll` — recommended (disables Jekyll processing)
+  - `assets/` — images/screenshots (e.g., plots, project screenshots)
 
- <li> <em><strong>Replication of indices with a basket of Futures</strong></em> - 2025 </li>
-visit <a href="https://gm46.pythonanywhere.com">project</a> for more info
+> Note: If you use `.nojekyll`, GitHub Pages serves your HTML/CSS exactly as-is (no Jekyll theme interference).
 
- <li> <em><strong> Cheapness Engine for Governative Bonds </strong></em> - 2025 </li>
- extract from a group of bonds common and idysincratic movements and deduce a cheapness score using PCA methods
+---
 
- <li> <em><strong> PCA decomposition of curves </strong></em> - 2025 </li>
-decompose curves into principal components and anlyze movements common between bonds and idysincratic
+## Projects (selection)
 
- <li> <em><strong> Strategy backtesting </strong></em> - 2025 </li>
- <li> <em><strong> Hedge weights with Regression  </strong></em> - 2025 </li>
-</ul>
+### Multivariate Pricing (2024)
+Developed and calibrated multivariate Lévy models (NIG) for the S&P 500 and EURO STOXX 50; priced exotic derivatives and compared performance against VG and Black models.  
+**Tools:** Matlab, Python
 
+### Portfolio Management (2024)
+Implemented and analyzed portfolio optimization strategies (sector constraints, Black–Litterman, resampling) on S&P 500 constituents; validated out-of-sample performance.  
+**Tools:** Matlab
 
+### Energy Price Modeling (2024)
+Modeled electricity futures using OU-IG and OU-Normal processes with seasonality, jumps, and mean reversion; calibrated to market data and priced options via Monte Carlo simulation.  
+**Tools:** Matlab
 
-<p> <em><strong>EDUCATION</strong></em>
-<ul>
-  <li> <em><strong> MSc Mathematical Engineering, Quantitative Finance [exp. 110/110] 2023-Present
-  </strong></em> </li>
-key courses: Financial Engineering, Mathematical Finance, Stochastic Calculus, Computational Finance,
-Algorithms and Parallel Computing, Fintech, Real and Functional Analysis, Insurance, Econometrics.
-  
-  <li> <em><strong>BSc Mathematical Engineering [94/110] 2020-2023
- </strong></em> </li>
-Mathematical Finance, Partial Differential Equations, Statistics, Numerical Analysis, Probability, Analysis I-III
+### Insurance Company Capital Requirement (2024)
+Computed Basic Solvency Capital Requirement (Life + Market risks) with both stochastic and deterministic approaches.  
+**Tools:** Matlab, Excel
 
-  <li> <em><strong> Liceo Scientifico Statale R.Donatelli - B.Pascal 2015-2020
- </strong></em> </li>
-Student body president, focus on Mathematics, Physics, Philosophy, History
+### Clustering of Bank Customers (2025)
+Segmented bank customers via clustering to identify personas and improve banking strategy design.  
+**Tools:** Python
 
-</ul>
+### Index Replication with a Basket of Futures (2025)
+Built a replication approach for equity indices using a constrained basket of futures, focusing on tracking error and robustness.  
+**Demo:** https://gm46.pythonanywhere.com  
+**Tools:** Python
 
+### Cheapness Engine for Government Bonds (2025)
+Separated common vs idiosyncratic movements in a bond universe and derived a relative cheapness score using PCA-style factor decomposition and residual analysis.  
+**Tools:** Python
 
-<p> <em><strong>EXPERIENCE</strong></em>
-<ul>
-  <li> <em><strong> Quantitative Trader </strong></em> 2025-Present</li>
-Internship at UniCredit on the Government Bonds trading desk, where I support daily trading
-activities by developing and implementing quantitative tools and infrastructure.
-  
-  <li> <em><strong> Private Math & Physics teacher  </strong></em>  2018-present</li>
-Personalized tutoring in algebra, calculus and geometry for university and high school students.
-  
-  <li> <em><strong>Teacher Assistant </strong></em> 2018-2021 </li>
-Assisted students with learning disabilities by creating personalized teaching strategies.
-</ul>
+### PCA Decomposition of Curves (2025)
+Decomposed yield curves into principal components and analyzed shared vs idiosyncratic dynamics across instruments.  
+**Tools:** Python
 
+### Strategy Backtesting (2025)
+Backtested systematic strategies on historical data, evaluating performance and stability across regimes.  
+**Tools:** Python
 
-<p>SKILLS & INTERESTS: 
-<ul>
-  <li> Languages: Italian, English</li>
-  <li> Skills & tools: Matlab, C++, Python, Excel, Latex, PowerPoint, R</li>
-  <li> Soft skills: communication, leadership, teamwork</li>
-  <li> Interests: Sailing, Gym enthusiast, Trekking, Travelling</li>
-</ul>
+### Hedge Weights via Regression (2025)
+Estimated hedge ratios and factor exposures using regression-based techniques for risk control and hedging design.  
+**Tools:** Python / Matlab (depending on implementation)
+
+---
+
+## Experience
+
+**Quantitative Trader Intern — UniCredit (Government Bonds Desk) (2025–Present)**  
+Supporting daily trading activities by developing quantitative tools and infrastructure.
+
+**Private Math & Physics Tutor (2018–Present)**  
+Personalized tutoring in algebra, calculus, and geometry for high school and university students.
+
+**Teacher Assistant (2018–2021)**  
+Supported students with learning disabilities through personalized teaching strategies.
+
+---
+
+## Education
+
+**MSc Mathematical Engineering — Quantitative Finance (2023–Present, expected 110/110)**  
+Key courses: Financial Engineering, Mathematical Finance, Stochastic Calculus, Computational Finance, Algorithms & Parallel Computing, FinTech, Real & Functional Analysis, Insurance, Econometrics.
+
+**BSc Mathematical Engineering (2020–2023, 94/110)**  
+Key courses: Mathematical Finance, PDEs, Statistics, Numerical Analysis, Probability, Analysis I–III.
+
+**Liceo Scientifico Statale R. Donatelli – B. Pascal (2015–2020)**  
+Student body president; focus on Mathematics, Physics, Philosophy, History.
+
+---
+
+## Skills & Interests
+
+- **Languages:** Italian, English  
+- **Tools:** Matlab, Python, C++, Excel, LaTeX, PowerPoint, R  
+- **Soft skills:** communication, leadership, teamwork  
+- **Interests:** sailing, gym, trekking, travelling
+
+---
+
+## How to update the website
+
+1. Edit `index.html` to update content/formatting.
+2. Replace `CV_Andrea_Tarditi.pdf` when you update your CV (keep the filename unchanged).
+3. Commit & push to `main`. GitHub Pages will redeploy automatically.
+
+### Recommended (avoid Jekyll issues)
+- Add an empty `.nojekyll` file in the repo root.
+- Remove `_config.yml` unless you intentionally use Jekyll.
+
+---
+
+## Contact
+
+Email: andreatrdt@gmail.com
