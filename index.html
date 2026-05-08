@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Andrea Tarditi — Quantitative Finance and Financial Engineering portfolio: projects, experience, education, skills, and CV." />
+  <title>Andrea Tarditi | Quantitative Finance & Financial Engineering</title>
+
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.09);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --faint: rgba(255,255,255,.55);
+      --line: rgba(255,255,255,.12);
+      --accent: #7aa2ff;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --max: 1050px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    [data-theme="light"]{
+      --bg: #f7f8fb;
+      --panel: rgba(10,20,35,.06);
+      --panel2: rgba(10,20,35,.10);
+      --text: rgba(10,20,35,.92);
+      --muted: rgba(10,20,35,.70);
+      --faint: rgba(10,20,35,.55);
+      --line: rgba(10,20,35,.14);
+      --accent: #365cff;
+      --shadow: 0 10px 30px rgba(10,20,35,.12);
+    }
+
+    html,body{ height:100%; scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: var(--sans);
+      background:
+        radial-gradient(1200px 800px at 70% -10%, rgba(122,162,255,.10), transparent 60%),
+        radial-gradient(900px 600px at 10% 0%, rgba(120,255,206,.06), transparent 55%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    a{ color: var(--text); text-decoration: none; }
+    a:hover{ color: var(--accent); }
+    .container{ width:min(var(--max), calc(100% - 44px)); margin:0 auto; }
+
+    .topbar{
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      background: color-mix(in srgb, var(--bg) 76%, transparent);
+      border-bottom: 1px solid var(--line);
+      z-index: 10;
+    }
+
+    .topbar .row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 14px 0;
+      gap: 14px;
+    }
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap: 2px;
+      min-width: 220px;
+    }
+
+    .brand strong{ font-size: 15px; letter-spacing:.2px; }
+    .brand span{ font-size: 12.5px; color: var(--muted); }
+
+    nav{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      gap: 10px;
+      align-items:center;
+    }
+
+    .navlink{
+      font-size: 13px;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 10px;
+    }
+
+    .navlink:hover{ background: var(--panel); color: var(--text); }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.45rem;
+      font-size: 13px;
+      padding: 9px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      transition: transform .15s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .btn:hover{
+      border-color: color-mix(in srgb, var(--accent) 50%, var(--line));
+      transform: translateY(-1px);
+    }
+
+    .btn.primary{
+      background: color-mix(in srgb, var(--accent) 22%, var(--panel));
+      border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
+    }
+
+    .iconbtn{
+      font-family: var(--mono);
+      font-size: 12px;
+      padding: 9px 10px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      cursor: pointer;
+      color: var(--muted);
+    }
+
+    .iconbtn:hover{ color: var(--text); }
+
+    .hero{ padding: 40px 0 20px; }
+    .hero h1{
+      margin: 0 0 10px;
+      font-size: clamp(32px, 4vw, 48px);
+      letter-spacing: -.6px;
+    }
+
+    .hero p{
+      margin: 0;
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 78ch;
+    }
+
+    .quick{
+      margin-top: 18px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+    }
+
+    .pill{
+      display:inline-flex;
+      gap: 8px;
+      align-items:center;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .pill code{
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text);
+    }
+
+    section{ padding: 18px 0; }
+
+    .section-title{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap: 12px;
+      margin: 12px 0 10px;
+    }
+
+    .section-title h2{
+      margin:0;
+      font-size: 18px;
+      letter-spacing:.2px;
+    }
+
+    .section-title span{
+      color: var(--faint);
+      font-size: 13px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+
+    .card{
+      grid-column: span 6;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 14px 14px 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .card:hover{ background: var(--panel2); }
+
+    .card h3{
+      margin:0 0 6px;
+      font-size: 15px;
+      letter-spacing:.2px;
+    }
+
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 8px;
+      align-items:center;
+      color: var(--faint);
+      font-size: 12.5px;
+      margin-bottom: 8px;
+    }
+
+    .tag{
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: color-mix(in srgb, var(--panel) 70%, transparent);
+      color: var(--muted);
+    }
+
+    .card p{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 13.5px;
+    }
+
+    .card .links{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      font-size: 13px;
+    }
+
+    .card .links a{
+      color: var(--muted);
+      padding: 6px 8px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+    }
+
+    .card .links a:hover{
+      color: var(--text);
+      border-color: var(--line);
+      background: color-mix(in srgb, var(--panel) 70%, transparent);
+    }
+
+    .timeline{
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+    }
+
+    .item{
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .item .top{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap: 10px;
+      align-items:baseline;
+      margin-bottom: 6px;
+    }
+
+    .item strong{ font-size: 14.5px; }
+    .item .when{ color: var(--faint); font-size: 12.5px; font-family: var(--mono); }
+    .item .where{ color: var(--muted); font-size: 13px; margin-bottom: 6px; }
+    .item ul{ margin: 0; padding-left: 18px; color: var(--muted); font-size: 13.5px; }
+    .item li{ margin: 6px 0; }
+
+    .cols{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .box{
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .box h3{ margin:0 0 8px; font-size: 14.5px; }
+    .box ul{ margin: 0; padding-left: 18px; color: var(--muted); font-size: 13.5px; }
+    .box li{ margin: 6px 0; }
+
+    footer{
+      padding: 26px 0 40px;
+      color: var(--faint);
+      font-size: 12.5px;
+      border-top: 1px solid var(--line);
+      margin-top: 22px;
+    }
+
+    @media (max-width: 900px){
+      .topbar .row{ align-items:flex-start; flex-direction:column; }
+      nav{ justify-content:flex-start; }
+      .card{ grid-column: span 12; }
+      .brand{ min-width: auto; }
+      .cols{ grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto; }
+      .btn{ transition:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div class="row">
+        <div class="brand">
+          <strong>Andrea Tarditi</strong>
+          <span>Quantitative Finance · Financial Engineering · Market Microstructure</span>
+        </div>
+
+        <nav aria-label="Primary">
+          <a class="navlink" href="#projects">Projects</a>
+          <a class="navlink" href="#experience">Experience</a>
+          <a class="navlink" href="#education">Education</a>
+          <a class="navlink" href="#skills">Skills</a>
+          <a class="navlink" href="#awards">Awards</a>
+          <a class="btn primary" href="CV_Andrea_Tarditi.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
+          <button class="iconbtn" id="themeBtn" type="button" aria-label="Toggle theme">theme</button>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <header class="hero" id="top">
+      <h1>Andrea Tarditi</h1>
+      <p>
+        Mathematical Engineering graduate in Quantitative Finance from Politecnico di Milano.
+        Interested in derivatives pricing, fixed income analytics, risk, and market microstructure,
+        with recent work on Hawkes processes and stochastic control for market making.
+      </p>
+
+      <div class="quick" role="list">
+        <a class="pill" href="mailto:andreatrdt@gmail.com" role="listitem">Email: <code>andreatrdt@gmail.com</code></a>
+        <span class="pill" role="listitem">Location: <code>Milan, IT</code></span>
+        <a class="pill" href="https://github.com/andreatrdt" target="_blank" rel="noopener noreferrer" role="listitem">GitHub</a>
+        <a class="pill" href="https://www.linkedin.com/in/andrea-tarditi/" target="_blank" rel="noopener noreferrer" role="listitem">LinkedIn</a>
+      </div>
+
+      <div class="quick" aria-label="Main actions">
+        <a class="btn primary" href="CV_Andrea_Tarditi.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
+        <a class="btn" href="#projects">View Projects</a>
+      </div>
+    </header>
+
+    <section id="projects">
+      <div class="section-title">
+        <h2>Projects</h2>
+        <span>Selected academic and applied work</span>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Hawkes Market-Making</h3>
+          <div class="meta">
+            <span class="when">2026</span>
+            <span class="tag">Python</span>
+            <span class="tag">Hawkes Processes</span>
+            <span class="tag">Stochastic Control</span>
+          </div>
+          <p>
+            Built and calibrated a bivariate Hawkes model of aggressive buy/sell order flow in limit order books.
+            Formulated an HJB stochastic-control market-making problem under CARA utility, modeling fills and adverse
+            selection via predictable thinning/marking, and validated the resulting quoting policy in historical replay/backtests.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Yield Curve Decomposition</h3>
+          <div class="meta">
+            <span class="when">2025</span>
+            <span class="tag">Python</span>
+            <span class="tag">Fixed Income</span>
+            <span class="tag">PCA</span>
+          </div>
+          <p>
+            Decomposed yield-curve dynamics via PCA into level, slope, and curvature factors, separating Euro-wide
+            components from country-specific movements.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Strategy Backtesting</h3>
+          <div class="meta">
+            <span class="when">2025</span>
+            <span class="tag">Python</span>
+            <span class="tag">LOB Replay</span>
+            <span class="tag">Market Microstructure</span>
+          </div>
+          <p>
+            Used historical LOB simulations to derive quoting policies, calibrating either the target spread from mid or the
+            volume/position kept in front at each book level. Translated replay results into deployable rules linking quote
+            aggressiveness to expected fills, adverse selection, and inventory risk.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Portfolio Replica</h3>
+          <div class="meta">
+            <span class="when">2025</span>
+            <span class="tag">Python</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Web App</span>
+          </div>
+          <p>
+            Deployed a simulated fintech investment platform that uses machine learning to classify investors and recommend
+            tailored passive/active ETF portfolios. Built an interactive questionnaire for suitability prediction and surfaced
+            portfolio risk/TER details.
+          </p>
+          <div class="links">
+            <a href="https://gm46.pythonanywhere.com" target="_blank" rel="noopener noreferrer">Live project demo →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Clustering of Bank Customers</h3>
+          <div class="meta">
+            <span class="when">2025</span>
+            <span class="tag">Python</span>
+            <span class="tag">Clustering</span>
+            <span class="tag">Customer Analytics</span>
+          </div>
+          <p>
+            Segmented bank customers using clustering to identify key personas and support data-driven banking strategy design.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Multivariate Pricing</h3>
+          <div class="meta">
+            <span class="when">2024</span>
+            <span class="tag">Matlab</span>
+            <span class="tag">Python</span>
+            <span class="tag">NIG</span>
+          </div>
+          <p>
+            Developed and calibrated multivariate Lévy models (NIG) for S&amp;P 500 and EURO STOXX 50. Priced exotic
+            derivatives and compared model performance against VG and Black models.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Energy Price Modeling</h3>
+          <div class="meta">
+            <span class="when">2024</span>
+            <span class="tag">Matlab</span>
+            <span class="tag">Stochastic Processes</span>
+            <span class="tag">Monte Carlo</span>
+          </div>
+          <p>
+            Modeled electricity futures using OU-IG and OU-Normal stochastic processes, capturing seasonality, jumps,
+            and mean reversion. Calibrated models to market data and simulated option prices via Monte Carlo.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Insurance Company Capital Requirement</h3>
+          <div class="meta">
+            <span class="when">2024</span>
+            <span class="tag">Matlab</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Risk</span>
+          </div>
+          <p>
+            Computed the Basic Solvency Capital Requirement for an insurance company based on Life and Market risks,
+            using both stochastic and deterministic approaches.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-title">
+        <h2>Experience</h2>
+        <span>Industry and teaching</span>
+      </div>
+
+      <div class="timeline">
+        <div class="item">
+          <div class="top">
+            <strong>Quantitative Trader Intern — UniCredit, Government Bonds Trading Desk</strong>
+            <span class="when">2025–2026</span>
+          </div>
+          <div class="where">
+            Supported daily trading activities by developing and implementing quantitative tools and infrastructure.
+          </div>
+          <ul>
+            <li>Developed quantitative tools for fixed income analytics and trading workflow support.</li>
+            <li>Worked on infrastructure and automation supporting daily desk activities.</li>
+            <li>Contributed to market monitoring and morning market overview preparation.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="top">
+            <strong>Private Math &amp; Physics Teacher</strong>
+            <span class="when">2020–Present</span>
+          </div>
+          <div class="where">
+            Personalized tutoring in algebra, calculus, and geometry for university and high school students.
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="top">
+            <strong>Teacher Assistant — Learning Disabilities Support</strong>
+            <span class="when">2018–2021</span>
+          </div>
+          <div class="where">
+            Assisted students with learning disabilities by creating personalized teaching strategies.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="section-title">
+        <h2>Education</h2>
+        <span>Politecnico di Milano</span>
+      </div>
+
+      <div class="timeline">
+        <div class="item">
+          <div class="top">
+            <strong>MSc Mathematical Engineering — Quantitative Finance</strong>
+            <span class="when">2023–2026</span>
+          </div>
+          <div class="where">
+            Key courses: Financial Engineering, Mathematical Finance, Stochastic Calculus, Computational Finance,
+            Algorithms &amp; Parallel Computing, FinTech, Real &amp; Functional Analysis, Insurance, Econometrics.
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="top">
+            <strong>BSc Mathematical Engineering</strong>
+            <span class="when">2020–2023</span>
+          </div>
+          <div class="where">
+            Key courses: Mathematical Finance, Partial Differential Equations, Statistics, Numerical Analysis,
+            Probability, Analysis I–III.
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="top">
+            <strong>Liceo Scientifico Statale R. Donatelli – B. Pascal</strong>
+            <span class="when">2015–2020</span>
+          </div>
+          <div class="where">
+            Student body president; focus on Mathematics, Physics, Philosophy, and History.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-title">
+        <h2>Skills &amp; Interests</h2>
+        <span>Tools, languages, and interests</span>
+      </div>
+
+      <div class="cols">
+        <div class="box">
+          <h3>Technical</h3>
+          <ul>
+            <li>Python, Matlab, C++, R</li>
+            <li>Excel, LaTeX, PowerPoint</li>
+            <li>Bloomberg Terminal</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3>Languages &amp; Interests</h3>
+          <ul>
+            <li>Languages: Italian, English</li>
+            <li>Interests: sailing, gym, trekking, travelling</li>
+            <li>Soft skills: communication, leadership, teamwork</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards">
+      <div class="section-title">
+        <h2>Awards</h2>
+        <span>Selected recognition</span>
+      </div>
+
+      <div class="timeline">
+        <div class="item">
+          <div class="top">
+            <strong>Best Pitch Award — QFinLab, Financial Engineering</strong>
+            <span class="when">2024</span>
+          </div>
+          <div class="where">
+            Winning pitch on multivariate Lévy models for exotic option pricing.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;">
+        <div>
+          <strong style="color:var(--text);">Contact</strong><br/>
+          <span>Email:</span> <a href="mailto:andreatrdt@gmail.com">andreatrdt@gmail.com</a>
+        </div>
+        <div style="text-align:right;">
+          <span style="font-family:var(--mono);">© <span id="year"></span> Andrea Tarditi</span><br/>
+          <span>Built for GitHub Pages · Single-file deploy</span>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const key = "theme_pref";
+    const btn = document.getElementById("themeBtn");
+    const saved = localStorage.getItem(key);
+
+    if (saved) {
+      document.documentElement.setAttribute("data-theme", saved);
+    }
+
+    btn.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+      const next = current === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem(key, next);
+    });
+  </script>
+</body>
+</html>
